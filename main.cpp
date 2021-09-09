@@ -207,9 +207,45 @@ void suggestSlot(MeetingScheduler &cs)
     cs.suggestSlot(day, start, endi, duration, num, users);
 }
 
+void greet()
+{
+    cout << "Hi There !!, \n";
+    cout << "########## "
+         << "Welcome  To  Meeting  Scheduler  System "
+         << "##########\n";
+}
+
+void displayInfo()
+{
+    cout << "\n";
+    cout << "Here is a little info for using me :-\n\n";
+    cout << "-> Functionalities <-\n1.)add-user\t2.)create-event\t3.)show-events\t 4.)suggest-slot\t5.)info\t6.)exit\n\n";
+    cout << "-> Usage <-\n\n";
+
+    cout << "1.)add-user: \n";
+    cout << "Syntax: add-user 'user_name'\nPurpose: Adds new user to system.\n\n";
+
+    cout << "2.)create-event: \n";
+    cout << "Syntax: create-event 'date_dd-mm-yyyy' 'time_24hr_format' 'duration_meeting' 'no._of_user' 'user_name1' 'user_name2' . . .\nPurpose: Schedules meeting between users.\n\n";
+
+    cout << "3.)show-events: \n";
+    cout << "Syntax: show-events 'date_dd-mm-yyyy' 'user_name1'\nPurpose: Shows event for user on given date.\n\n";
+
+    cout << "4.)suggest-slot: \n";
+    cout << "Syntax: suggest-slot 'date_dd-mm-yy' 'start_time_24hr_format' 'end_time_24hr_format'  'duration_meeting' 'no._of_users' 'user_name1' 'user_name2' . . .\nPurpose: Checks and tells whether slot is available or not.\n\n";
+
+    cout << "5.)info: \n";
+    cout << "Syntax: info\nPurpose: Displays information for using me.\n\n";
+
+    cout << "6.)exit: \n";
+    cout << "Syntax: exit\nPurpose: Closing the system.\n\n";
+}
+
 int main()
 {
     MeetingScheduler cs;
+    greet();
+    displayInfo();
     while (1)
     {
         string command;
@@ -233,6 +269,10 @@ int main()
         else if (command == "exit")
         {
             break;
+        }
+        else if (command == "info")
+        {
+            displayInfo();
         }
         else
         {
